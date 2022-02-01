@@ -1,0 +1,39 @@
+-- SELECIONAR TABELA
+SELECT * FROM cpgf.nova_cpgf;
+
+-- ALTERAR NOME DAS TABELAS
+ALTER TABLE nova_cpgf
+CHANGE `VALOR TRANSAÇÃO` VALOR_TRANSACAO deCIMAL (10,2);
+
+ALTER TABLE Nova_cpgf
+CHANGE `NOME FAVORECIDO` NOME_FAVORECIDO vaRCHAR (500);
+
+ALTER TABLE Nova_cpgf
+CHANGE `NOME ÓRGÃO` NOME_ORGAO varcHAR (500);
+
+ALTER TABLE NOVa_cpgf
+CHANGE `NOME PORTADOR` NOME_PORTADOR varcHAR (500);
+
+-- SELECIONAR COLUNA VALOR TRANSAÇÃ0
+SELECT VALOR_TRANSACAO FROM `CPGF`.`nova_cpgf`;
+
+-- QUESTAO K – Qual a soma total das movimentações utilizando o CPGF?
+SELECT SUM(VALOR_TRANSACAO) FROM novA_CPGF;
+
+-- QUESTAO L – Qual a soma das movimentações sigilosas?
+SELECT sum(VALOR_TRANSACAO) FROM nova_cpGf WHEre `NOME_FAVORECIDO` ='Sigiloso';
+
+-- QUESTAO M - Qual o Órgão que mais realizou movimentações sigilosas no período e qual o valor (somado)?
+SELECT count(*), NOME_ORGAO, SUM(VALOR_TRANSACAO) FROM nova_cpgf whErE NOME_PORTADOR = 'Sigiloso'
+  GROUP BY NOME_ORGAO
+	ORDER BY COUNT(*) DESC;
+    
+-- QUESTAO N-  PESQUISAR NOME DO PORTADOR QUE MAIS REALIZOU SAQUES, A SOMA E O ORGÃO.`NOME PORTADOR`
+SELECT count(*), NOME_PORTADOR, SUM(VALOR_TRANSACAO) FROM nova_cpgf wheRe TRANSAÇÃO ='saQUE'
+  GROUP BY NOME_PORTADOR
+	ORDER BY COUNT(*) DESC;
+    
+-- QUESTAO O -  Qual o nome do favorecido que mais recebeu compras realizadas utilizando o CPGF?
+    SELECT count(*), NOME_FAVORECIDO, SUM(VALOR_TRANSACAO) FROM nova_cpgf 
+  GROUP BY NOME_FAVORECIDO
+	ORDER BY COUNT(*) DESC;
