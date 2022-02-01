@@ -54,7 +54,7 @@ NOME PORTADOR: RAFAEL FERREIRA COSTA, SAQUES TOTAIS: R$ 24.520,0 E NOME ÓRGÃO:
 Resposta: Nome do favorecido: MERCADOPAGO.COM REPRESENTACOES LTDA e total recebido: R$ 60.694,21.
 
 #### P - Descreva qual a abordagem utilizada para desenvolver o código para os ítens de K a O.
-Resposta: 
+Resposta: A abordagem foi atraves do banco e dados, ao iniciar o banco de dados MySQL Workbench é importada as informações do arquivo .CSV disponibilizado através da Table Data Import Wizard, assim foi possivel o desenvolvimento das querys para obter resultados.
 
 
 
